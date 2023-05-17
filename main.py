@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
-from MainWindow_ui import Ui_MainWindow
+from user_interface import Ui_MainWindow_mod as Ui_MainWindow
 
 
 class MainWindow(QMainWindow):
@@ -10,13 +10,15 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
 
         # Connect a button click event to a function
-        self.ui.selectFolderPushButton.clicked.connect(self.show_message_box)
+        self.ui.selectFolderPushButton.clicked.connect(self.select_folder)
 
-    def show_select_folder_dialog(self):
-        self.root_path = QFileDialog.getExistingDirectory(
+    def select_folder(self):
+        root_path = QFileDialog.getExistingDirectory(
             self, "Select Folder", options=QFileDialog.ShowDirsOnly)
-        if self.root_path:
-            print("Selected folder:", self.root_path)
+        if root_path:
+            self.ui.root_path = root_path
+            print("Selected folder:", root_path)
+
 
 
 if __name__ == "__main__":

@@ -14,19 +14,22 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="selectFolderPushButton">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>111</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Select folder</string>
-    </property>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QPushButton" name="selectFolderPushButton">
+      <property name="text">
+       <string>Select folder</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="rootPathlineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
